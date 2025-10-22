@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indoswiss Medicon | Products</title>
+<link rel="icon" href="logo.jpeg" type="image/x-icon">
+<style>
+:root {
+  --blue1: #0092ca;
+  --blue2: #00b4d8;
+  --bg: #e7f5ff;
+  --text: #083358;
+  --muted: #5e738a;
+  --card: #ffffff;
+  --radius: 12px;
+  font-family: "Poppins", sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: linear-gradient(180deg, var(--bg), #ffffff);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* HEADER INFO BAR */
+.top-bar {
+  background: var(--blue1);
+  color: white;
+  padding: 6px 12px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+.top-bar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* HEADER */
+header {
+  background: white;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid var(--blue1);
+  object-fit: cover;
+}
+.brand-name {
+  font-weight: 800;
+  color: var(--blue1);
+  font-size: 20px;
+}
+nav a {
+  margin-left: 16px;
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+nav a:hover {
+  color: var(--blue1);
+}
+.contact-btn {
+  background: linear-gradient(90deg, var(--blue1), var(--blue2));
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,146,202,0.3);
+}
+
+/* HERO SECTION */
+.hero {
+  max-width: 1200px;
+  margin: 40px auto 20px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 32px;
+  color: var(--blue1);
+  font-weight: 900;
+}
+.hero p {
+  color: var(--muted);
+  margin-top: 6px;
+  font-size: 15px;
+}
+
+/* SEARCH + FILTER */
+.search-filter {
+  margin: 20px auto;
+  max-width: 1000px;
+  text-align: center;
+}
+.search-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.search-box input {
+  border: none;
+  outline: none;
+  padding: 12px;
+  width: 100%;
+  font-size: 15px;
+}
+.search-box button {
+  background: var(--blue1);
+  border: none;
+  color: white;
+  padding: 12px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.search-box button:hover { background: var(--blue2); }
+
+.filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+.filter-btn {
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: #fff;
+  color: var(--muted);
+  font-weight: 600;
+  border: 1px solid #d0e7f8;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.filter-btn.active, .filter-btn:hover {
+  background: linear-gradient(90deg, var(--blue1), var(--blue2));
+  color: #fff;
+}
+
+/* PRODUCT GRID */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
+  gap: 18px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 10px;
+}
+.product-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+}
+.product-img {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+.product-card:hover img { transform: scale(1.08); }
+.product-body {
+  padding: 12px 14px;
+}
+.product-body h3 {
+  font-size: 16px;
+  color: var(--text);
+  font-weight: 700;
+}
+.product-body p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.product-body .mrp {
+  font-weight: 700;
+  color: var(--blue1);
+  margin-top: 6px;
+}
+.product-body button {
+  background: linear-gradient(90deg, var(--blue1), var(--blue2));
+  border: none;
+  color: white;
+  border-radius: 8px;
+  font-weight: 700;
+  padding: 8px 12px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.product-body button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,146,202,0.3);
+}
+</style>
+</head>
+<body>
+
+<!-- TOP INFO BAR -->
+<div class="top-bar">
+  <!-- <span>📍 Lucknow, Uttar Pradesh, India</span> -->
+  <a href="mailto:mindoswiss@gmail.com">✉️ mindoswiss@gmail.com</a>
+  <a href="tel:+919919134791">📞 +91-9919134791</a>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <img src="logo.jpeg" alt="Indoswiss Logo">
+      <div>
+        <div class="brand-name">Indoswiss Medicon™ </div>
+        <small style="color:var(--muted);">Life’s Better When You’re Healthy</small>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html" style="color:var(--blue1);font-weight:700;">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Our Product Catalogue</h1>
+  <p>Explore our high-quality range of medical products across multiple categories.</p>
+</section>
+
+<!-- SEARCH & FILTER -->
+<section class="search-filter">
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search by product name, category or composition...">
+    <button onclick="applySearch()">Search</button>
+  </div>
+  <div class="filters">
+    <button class="filter-btn active" data-filter="All" onclick="filterProducts('All')">All</button>
+    <button class="filter-btn" data-filter="Injection" onclick="filterProducts('Injection')">Injection</button>
+    <button class="filter-btn" data-filter="Tablets" onclick="filterProducts('Tablets')">Tablets</button>
+    <button class="filter-btn" data-filter="Syrup" onclick="filterProducts('Syrup')">Syrup</button>
+    <button class="filter-btn" data-filter="Powder" onclick="filterProducts('Powder')">Powder</button>
+    <button class="filter-btn" data-filter="Capsules" onclick="filterProducts('Capsules')">Capsules</button>
+  </div>
+  <p id="productCount" style="margin-top:10px;color:var(--muted);font-weight:600;">Showing all products...</p>
+</section>
+
+<!-- PRODUCT GRID -->
+<section id="productGrid" class="product-grid">
+<!-- products will load here -->
+</section>
+
+<!-- =================== Part 2: Modal, Products array, Scripts, Footer =================== -->
+
+<!-- Modal styles (pasteable here) -->
+<style>
+/* Modal & footer styles */
+.modal-backdrop{
+  position:fixed; inset:0; display:none; place-items:center; background:rgba(4,10,20,0.5); z-index:9999; padding:20px;
+}
+.modal-card{
+  width:100%; max-width:980px; background:#fff; border-radius:14px; display:grid; grid-template-columns:1fr 380px; gap:18px; padding:18px; box-shadow:0 30px 100px rgba(6,20,40,0.18); max-height:90vh; overflow:auto;
+}
+.modal-img{width:100%; height:360px; border-radius:10px; overflow:hidden; background:linear-gradient(180deg,#f7fbff,#fff)}
+.modal-img img{width:100%; height:100%; object-fit:cover}
+.modal-aside { padding:6px 4px; display:flex; flex-direction:column; gap:10px; }
+.modal-aside input, .modal-aside textarea { border-radius:8px; border:1px solid #e6f3fb; padding:10px; font-size:14px; outline:none; }
+.modal-aside button { padding:10px 12px; border-radius:10px; border:0; background: linear-gradient(90deg,var(--blue1),var(--blue2)); color:#fff; font-weight:800; cursor:pointer; }
+.spec-row{display:flex;justify-content:space-between;align-items:center;background:linear-gradient(180deg,#fff,#fbfdff);padding:8px;border-radius:8px;border:1px solid #e7f7ff;margin-bottom:8px;font-weight:700}
+.close-x{background:#fff;border:1px solid #eef7fb;border-radius:8px;padding:6px;cursor:pointer}
+
+/* Footer */
+.site-footer { background: linear-gradient(180deg,#f8fbff,#fff); padding:28px 12px; margin-top:36px; border-top:1px solid #e6f4fb; color:var(--text); }
+.footer-inner { max-width:1200px; margin:auto; display:flex; gap:18px; justify-content:space-between; flex-wrap:wrap; align-items:flex-start; }
+.footer-col { flex:1; min-width:200px; }
+.footer-col h4 { color:var(--blue1); margin-bottom:10px; font-size:16px; }
+.footer-col p, .footer-col a { color:var(--muted); font-size:14px; text-decoration:none; display:block; margin-bottom:8px; }
+.footer-bottom { margin-top:18px; text-align:center; color:var(--muted); font-weight:700; }
+@media(max-width:900px){ .modal-card{grid-template-columns:1fr; max-height:80vh} .modal-img{height:220px} }
+</style>
+
+<!-- MODAL MARKUP -->
+<div id="modalBackdrop" class="modal-backdrop" aria-hidden="true">
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div>
+      <div class="modal-img"><img id="modalImage" src="product-images/no-image.png" alt="Product image"></div>
+      <div style="margin-top:10px">
+        <h3 id="modalTitle" style="margin:6px 0 4px;font-size:18px;color:var(--blue1)"></h3>
+        <p id="modalDesc" style="color:var(--muted);font-size:14px;margin-top:6px"></p>
+      </div>
+    </div>
+
+    <aside class="modal-aside">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div style="font-weight:900">Product Details</div>
+        <button class="close-x" onclick="closeModal()" aria-label="Close">✕</button>
+      </div>
+
+      <div id="modalSpecsArea"></div>
+
+      <div id="modalPrice" style="font-weight:900;font-size:18px;color:var(--blue1)"></div>
+
+      <div style="margin-top:6px">
+        <input id="enq_name" placeholder="Your name" aria-label="Your name">
+        <input id="enq_email" placeholder="Your email" aria-label="Your email" style="margin-top:8px">
+        <input id="enq_phone" placeholder="Phone (optional)" aria-label="Phone" style="margin-top:8px">
+        <textarea id="enq_msg" placeholder="Message (optional)" aria-label="Message" style="margin-top:8px"></textarea>
+      </div>
+
+      <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
+        <button id="sendEnquiryBtn">Send Enquiry</button>
+        <a id="viewCatalogueBtn" href="Indoswiss_Catalogue.pdf" target="_blank" style="align-self:center;text-decoration:none;padding:10px 12px;border-radius:8px;border:1px solid #dff4fb;background:#fff;color:var(--blue1);font-weight:800">View Catalogue</a>
+      </div>
+
+      <div style="font-size:13px;color:var(--muted);margin-top:6px">Enquiry will open your email client with prefilled details.</div>
+    </aside>
+  </div>
+</div>
+
+<!-- PRODUCTS ARRAY (full detailed - placeholders) -->
+<script>
+const PRODUCTS = [
+  /* INJECTION */
+  {id:'meropenem-1g', name:'INPENAM INJ', category:'Injection', form:'Injection', pack:'Vial (1 g)', mrp:'1067/-', desc:'Meropenem 1 Gm (tray Pack) ', img:'product-images/INPENAM.png'},
+  {id:'piperacillin-tazo', name:'SWISSLIN-TZ', category:'Injection', form:'Injection', pack:'Vial (4g/500mg)', mrp:'355/-', desc:'PiperacillinE 4 Gm + Tazobactam 500 Mg (tray Pack) ', img:'product-images/224.jpeg'},
+  {id:'amoxy-sulb-1500', name:'SWISSLIN-SB 1.5', category:'Injection', form:'Injection', pack:'Vial (1.5 g)', mrp:'375/-', desc:'Amoxycillin 1000 mg + Sulbactam 500 Gm.', img:'product-images/amoxy-sulb-1500.jpg'},
+  {id:'ceftriaxone-1g', name:'SWISSLIN-SB', category:'Injection', form:'Injection', pack:'Vial (1 g)', mrp:'375/-', desc:'Amoxcyilling 250gm + Sulbactam 150gm ', img:'product-images/ceftriaxone-1g.jpg'},
+  {id:'cefepime-1g', name:'SWISSZONE', category:'Injection', form:'Injection', pack:'Vial (1 g)', mrp:'69.80/-', desc:'Ceftriaxone 1 gm', img:'product-images/swisszone.png'},
+  {id:'vancomycin-1g', name:'SWISSDOM - 40 ', category:'Injection', form:'Injection', pack:'Vial (1 g)', mrp:'56/-', desc:'Pantoprazole 40mg inj.', img:'product-images/5.png'},
+  {id:'diclofenac-inj', name:'SWISSZIF - AQ', category:'Injection', form:'Injection', pack:'1 ml Ampoule', mrp:'20/-', desc:'Diclofenac-Sodium Inj. 1 ML .', img:'product-images/23.jpeg'},
+  
+  /* TABLETS */
+  {id:'paracetamol-650', name:' SWISSFAST-650', category:'Tablets', form:'Tablet', pack:'10x10 ', mrp:'22.40/- 10 x 10', desc:'Paracetamol 650 mg (alu-alu).', img:'product-images/89.png'},
+  {id:'levofloxacin-500', name:'SWISSFLOX-L ', category:'Tablets', form:'Tablet', pack:'10x10 ', mrp:'85/- 10 x 10 ', desc:'Levofloxacin 500 mg (alu-alu) .', img:'product-images/levofloxacin-500.jpg'},
+  {id:'moxifloxacin-400', name:'SWISSFLOX-M', category:'Tablets', form:'Tablet', pack:'10x5 ', mrp:'185/- 10 x 1 x 5 ', desc:'Moxifloxacin 400 mg (alu-alu) .', img:'product-images/moxifloxacin-400.jpg'},
+  {id:'etoricoxib-90', name:'ETOSWISS-90', category:'Tablets', form:'Tablet', pack:'10x10', mrp:'65/- 10 x 10', desc:'Etoricoxib 90 mg (alu-alu) .', img:'product-images/etoricoxib-90.jpg'},
+  {id:'etoricoxib-120', name:'ETOSWISS-120', category:'Tablets', form:'Tablet', pack:'10x10', mrp:'75/- 10 x 10', desc:'Etoricoxib 120 mg (alu-alu) .', img:'product-images/etoricoxib-120.jpg'},
+  {id:'amoxy-clav-625', name:'SWISSLIN-CV 625', category:'Tablets', form:'Tablet', pack:'10x10', mrp:'185/- 10 x 10', desc:'Amoxycillin 500 mg + Clavulanic Acid 125 mg (alu-alu) .', img:'product-images/amoxy-clav-625.jpg'},
+  {id:'cefixime-lb', name:'SWISSCEF-LB 200', category:'Tablets', form:'Tablet', pack:'10x10', mrp:'90/- 10 x 10', desc:'Cefixime 200 mg + Lactic Acid Bacilus 60 Mil. Spores (alu-alu)', img:'product-images/cefixime-lb.jpg'},
+  
+  /* SYRUP */
+  {id:'swissloose', name:'SWISSLOOSE 170 ml', category:'Syrup', form:'Suspension', pack:'170 ml Bottle', mrp:'210/-', desc:'Liquid Paraffin 1.25 MI + Milk of Magnesium 3.75 MI + Sodium Picosulfate 3.33mg Suspension 3.33mg Suspension', img:'product-images/90.jpeg'},
+
+  
+  {id:'swisscool', name:'SWISSCOOL Syrup', category:'Syrup', form:'Syrup', pack:'100 ml Bottle', mrp:'—', desc:'Dimethicone 50mg + Aluminium Hydroxide 250gm- Milk of Magnesia 250mg + Sorbitol 1.25gm.', img:'product-images/950.jpeg'},
+
+
+  {id:'multiswiss-l', name:'MULTISWISS-L Syrup 200 ml', category:'Syrup', form:'Syrup', pack:'200 ml', mrp:'135/-', desc:'Lycopene 10%2000 mcg, Niacinamide 25mg, Folic Acid 100gcg, Selenium, Sodium Selenate 35 mcg, Zinc Gluconate 3mg, Potassium iodide 100 mcg, Cupric iodide 500mcg, Vitamin B12 1mcg,Vitamin B6 1.5mg Syrup.', img:'product-images/multiswiss-l.jpg'},
+
+
+  {id:'apiswiss', name:'APISWISS Syrup 200 ml', category:'Syrup', form:'Syrup', pack:'200 ml', mrp:'95/-', desc:'Cyproheptadine 2mg + Tricholine Citrate 275mg Syrup', img:'product-images/99.jpeg'},
+
+  /* POWDER */
+  {id:'indoswiss-protein', name:'INDOSWISS Protein 200 gm', category:'Powder', form:'Powder', pack:'200 gm ', mrp:'340/-', desc:'Fortified with DHA with the advantage of vitamin.', img:'product-images/889.png'},
+  {id:'indoswiss-plus', name:'INDOSWISS Plus Protein(OBS) 200 gm', category:'Powder', form:'Powder', pack:'200 gm Jar', mrp:'340/-', desc:'Fortified with DHA with the Advantage of vitamin.', img:'product-images/indoswiss-plus.jpg'},
+  {id:'swissargi-preg', name:'SWISSARGI PREG Sachet - L ', category:'Powder', form:'Sachet', pack:'10 x 5 gm', mrp:'55/-', desc:'Arginine 3gm, Proanthocyanidin 75mg, DHA mcg, L-methylfolate 800 mcg, Magnesium 100mg & Zinc Sulphate 10mg Monohydrat Granuls Sachet.', img:'product-images/swissargi-preg.jpg'},
+  /* CAPSULES */
+  {id:'ESMOSWISS - L', name:'ESMOSWISS - L', category:'Capsules', form:'Capsule', pack:'10 x 10', mrp:'185/-', desc:'Esomeprazole 40mg + Levosulpride 75mg (SR).', img:'product-images/capsule 6.jpeg'},
+  {id:'SWISSDOM-DSR', name:'SWISSDOM-DSR', category:'Capsules', form:'Capsule', pack:'10 x 10', mrp:'185/-', desc:'Pantoprazole 40mg + Domperidone 30mg (SR).', img:'product-images/capsule 2.jpeg'},
+];
+</script>
+
+<!-- RENDERING + FILTER + SEARCH + MODAL LOGIC -->
+<script>
+/* DOM refs */
+const gridEl = document.getElementById('productGrid');
+const countEl = document.getElementById('productCount');
+const filters = document.querySelectorAll('.filter-btn');
+
+let activeFilter = 'All';
+let searchQuery = '';
+
+/* Render products */
+function renderProducts(list){
+  if(!list || !list.length){
+    gridEl.innerHTML = `<div style="grid-column:1/-1;padding:40px;text-align:center;color:var(--muted);font-weight:700">No products found</div>`;
+    countEl.textContent = 'Showing 0 products';
+    return;
+  }
+  const html = list.map(p => `
+    <article class="product-card" data-id="${p.id}" data-category="${p.category}">
+      <div class="product-img"><img src="${p.img}" alt="${escapeHtml(p.name)}" onerror="this.onerror=null;this.src='product-images/no-image.png'"></div>
+      <div class="product-body">
+        <h3>${escapeHtml(p.name)}</h3>
+        <p>${escapeHtml(p.form)} • ${escapeHtml(p.pack)}</p>
+        <div class="mrp">${p.mrp && p.mrp !== '—' ? 'MRP: ' + escapeHtml(p.mrp) : 'MRP: Contact'}</div>
+        <p style="margin-top:6px;color:var(--muted);font-size:13px">${escapeHtml(truncate(p.desc,120))}</p>
+        <div style="display:flex;gap:8px;justify-content:flex-end">
+          <button onclick="openModal('${p.id}')">Details / Enquire</button>
+        </div>
+      </div>
+    </article>
+  `).join('');
+  gridEl.innerHTML = html;
+  countEl.textContent = `Showing ${list.length} product${list.length>1?'s':''}`;
+}
+
+/* initial render = all */
+renderProducts(PRODUCTS);
+
+/* Filter function */
+function filterProducts(category){
+  activeFilter = category;
+  // UI active
+  filters.forEach(f => {
+    if(f.dataset.filter === category) f.classList.add('active');
+    else f.classList.remove('active');
+  });
+  applyFilters();
+}
+
+/* Search */
+function applySearch(){
+  searchQuery = document.getElementById('searchInput').value.trim().toLowerCase();
+  applyFilters();
+}
+
+/* Combined apply */
+function applyFilters(){
+  let results = PRODUCTS.filter(p => {
+    const hay = (p.name + ' ' + p.desc + ' ' + p.form + ' ' + p.pack + ' ' + p.category).toLowerCase();
+    const matchSearch = searchQuery ? hay.includes(searchQuery) : true;
+    const matchFilter = (activeFilter === 'All') ? true : (p.category === activeFilter);
+    return matchSearch && matchFilter;
+  });
+  renderProducts(results);
+}
+
+/* Utility */
+function escapeHtml(s){ if(!s) return ''; return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+function truncate(s,n){ if(!s) return ''; return s.length>n ? s.slice(0,n-1)+'…' : s; }
+
+/* ------------------ Modal logic ------------------ */
+const modalBackdrop = document.getElementById('modalBackdrop');
+const modalImage = document.getElementById('modalImage');
+const modalTitle = document.getElementById('modalTitle');
+const modalDesc = document.getElementById('modalDesc');
+const modalSpecsArea = document.getElementById('modalSpecsArea');
+const modalPriceEl = document.getElementById('modalPrice');
+
+function openModal(id){
+  const p = PRODUCTS.find(x => x.id === id);
+  if(!p) return;
+  modalImage.src = p.img;
+  modalImage.alt = p.name;
+  modalTitle.textContent = p.name;
+  modalDesc.textContent = p.desc || '';
+  modalPriceEl.textContent = p.mrp && p.mrp !== '—' ? 'MRP: ' + p.mrp : 'MRP: Contact';
+  // specs
+  modalSpecsArea.innerHTML = '';
+  addSpec('Category', p.category);
+  addSpec('Form', p.form);
+  addSpec('Pack', p.pack);
+  // show modal
+  modalBackdrop.style.display = 'grid';
+  modalBackdrop.setAttribute('aria-hidden','false');
+  // reset form inputs
+  document.getElementById('enq_name').value = '';
+  document.getElementById('enq_email').value = '';
+  document.getElementById('enq_phone').value = '';
+  document.getElementById('enq_msg').value = '';
+}
+
+function addSpec(k,v){
+  const div = document.createElement('div');
+  div.className = 'spec-row';
+  div.innerHTML = `<div style="color:var(--muted)">${escapeHtml(k)}</div><div>${escapeHtml(v)}</div>`;
+  modalSpecsArea.appendChild(div);
+}
+
+function closeModal(){
+  modalBackdrop.style.display = 'none';
+  modalBackdrop.setAttribute('aria-hidden','true');
+}
+
+/* close modal on backdrop click */
+modalBackdrop.addEventListener('click', (e) => {
+  if(e.target === modalBackdrop) closeModal();
+});
+
+/* ESC to close */
+document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeModal(); });
+
+/* ------------------ Enquiry handler (mailto) ------------------ */
+document.getElementById('sendEnquiryBtn').addEventListener('click', () => {
+  const name = document.getElementById('enq_name').value.trim();
+  const email = document.getElementById('enq_email').value.trim();
+  const phone = document.getElementById('enq_phone').value.trim();
+  const msg = document.getElementById('enq_msg').value.trim();
+  const product = modalTitle.textContent || '';
+
+  if(!name || !email){
+    alert('Please enter your name and email to send enquiry.');
+    return;
+  }
+
+  // sanitize to prevent header injection
+  const sanitize = s => String(s).replace(/(\r|\n|%0a|%0d)/gi, ' ').trim();
+  const subject = sanitize(`Enquiry: ${product}`);
+  const body = [
+    'Hello,',
+    '',
+    `I would like details and pricing for the product: ${product}`,
+    '',
+    'Customer details:',
+    `Name: ${sanitize(name)}`,
+    `Email: ${sanitize(email)}`,
+    `Phone: ${sanitize(phone)}`,
+    '',
+    'Message:',
+    sanitize(msg),
+    '',
+    'Regards'
+  ].join('\n');
+
+  const to = 'mindoswiss@gmail.com';
+  window.location.href = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+});
+
+/* show counts per filter (optionally) - small helper to update text on each filter button */
+function updateFilterCounts(){
+  const counts = PRODUCTS.reduce((acc,p) => { acc[p.category] = (acc[p.category]||0) + 1; acc['All'] = (acc['All']||0) + 1; return acc; }, {});
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    const key = btn.dataset.filter;
+    const c = counts[key] || 0;
+    // append count if not already
+    btn.innerHTML = `${key} ${c?'<span style="opacity:.7;margin-left:6px;font-weight:700;color:#fff">'+c+'</span>':''}`;
+    // For All, better show total in productCount instead
+  });
+  // product count already shows number of rendered items
+}
+
+/* run update counts on load */
+updateFilterCounts();
+</script>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>About Indoswiss Medicon</h4>
+      <p>Indoswiss Medicon is committed to providing high-quality pharmaceutical and nutritional products. We focus on reliability, compliance and clinical effectiveness.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="PRODUCT.HTML">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="Indoswiss_Catalogue.pdf" target="_blank">Catalogue (PDF)</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p><strong> Corporte Address:</strong> Sanctoria No. 12, Post: Dishergar, Distt. P Burdwan - 713333 (West Bengal)</p>
+      <P><strong> Registered Office:</strong> H.No - 925, Avashvikash Colony KUDAGHAT - GORAKHPUR</P>
+
+      <p>✉️ <a href="mailto:mindoswiss@gmail.com">mindoswiss@gmail.com</a></p>
+      <p>📞 <a href="tel:+919919134791">+91-9919134791</a></p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div style="margin-top:12px;font-weight:900;color:var(--blue1)">Design & Developed by Yash Prajapati</div>
+    <div style="margin-top:8px;color:var(--muted)">© <span id="yrPart2"></span> Indoswiss Medicon — All rights reserved</div>
+  </div>
+</footer>
+
+<script>
+/* set year */
+document.getElementById('yrPart2').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
+
+
+<!-- =================== Part 3 :  Finishing polish / animations / UX tweaks =================== -->
+<style>
+/* Fade-in animation for product cards */
+@keyframes fadeInUp {
+  0% {opacity:0;transform:translateY(25px);}
+  100% {opacity:1;transform:translateY(0);}
+}
+.product-card {opacity:0;animation:fadeInUp .6s ease forwards;}
+.product-card:nth-child(odd){animation-delay:.1s;}
+.product-card:nth-child(even){animation-delay:.25s;}
+
+/* Filter animation */
+.filter-btn {transition:all .25s ease;}
+.filter-btn.active {transform:scale(1.05);}
+
+/* Back-to-Top button */
+#backToTop {
+  position:fixed; bottom:26px; right:26px; background:linear-gradient(90deg,var(--blue1),var(--blue2));
+  color:#fff; border:none; border-radius:50%; width:44px; height:44px;
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; box-shadow:0 4px 15px rgba(0,146,202,.4); opacity:0; pointer-events:none;
+  transition:opacity .3s ease,transform .3s ease;
+  z-index:999;
+}
+#backToTop.show {opacity:1; pointer-events:auto; transform:translateY(0);}
+#backToTop:hover {transform:translateY(-3px);}
+
+/* Smooth scroll behaviour */
+html {scroll-behavior:smooth;}
+</style>
+
+<!-- Back-to-Top button -->
+<button id="backToTop" aria-label="Back to top">↑</button>
+
+<script>
+// Back-to-Top visibility + action
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll',()=>{
+  if(window.scrollY>300) backToTop.classList.add('show');
+  else backToTop.classList.remove('show');
+});
+backToTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+/* re-apply fade-in when filter/search changes */
+const observer = new MutationObserver(()=>{
+  document.querySelectorAll('.product-card').forEach((el,i)=>{
+    el.style.animationDelay = (i*0.05)+'s';
+    el.style.opacity = 0;
+    void el.offsetWidth; // reset animation
+    el.style.animation='fadeInUp .6s ease forwards';
+  });
+});
+observer.observe(document.getElementById('productGrid'),{childList:true});
+</script>
+<!-- =================== End Part 3 =================== -->

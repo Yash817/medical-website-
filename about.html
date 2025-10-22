@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About Us — Indoswiss Medicon</title>
+<link rel="icon" href="logo.jpeg" type="image/x-icon">
+
+<style>
+:root{
+  --blue1:#0b7285;
+  --blue2:#12b8a5;
+  --text:#062e3b;
+  --muted:#475569;
+  --light:#f8fbfc;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--light);
+  color:var(--text);
+  line-height:1.6;
+  overflow-x:hidden;
+  scroll-behavior:smooth;
+}
+
+/* === Top Info Bar === */
+.top-bar{
+  background:var(--blue1);
+  color:#fff;
+  padding:8px 16px;
+  font-size:14px;
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+}
+.top-bar a{color:#fff;text-decoration:none;font-weight:500;}
+
+/* === Header === */
+header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 24px;
+  background:#fff;
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+  position:sticky;
+  top:0;
+  z-index:100;
+  flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand img{width:60px;height:60px;object-fit:contain;transition:.3s;}
+.brand img:hover{transform:scale(1.05);}
+.brand h1{font-size:20px;margin:0;color:var(--blue1);font-weight:800;}
+nav{display:flex;gap:14px;flex-wrap:wrap;}
+nav a{text-decoration:none;font-weight:600;color:var(--text);padding:8px 12px;border-radius:6px;transition:.3s;}
+nav a:hover,nav a.active{background:#e6f8f7;color:var(--blue1);}
+
+/* === Hero Section === */
+.hero{
+  padding:90px 20px;
+  text-align:center;
+  background:linear-gradient(120deg,#e6f9f9,#ffffff);
+}
+.hero h2{
+  font-size:42px;
+  color:var(--blue1);
+  margin-bottom:20px;
+  font-weight:800;
+  animation:fadeInDown 1s ease forwards;
+}
+.hero p{
+  max-width:850px;
+  margin:0 auto;
+  font-size:18px;
+  color:var(--muted);
+  animation:fadeIn 1.5s ease forwards;
+}
+
+/* === Managing Director Section === */
+.section{
+  max-width:1100px;
+  margin:60px auto;
+  padding:20px;
+}
+.md-card{
+  display:flex;
+  flex-wrap:wrap;
+  gap:30px;
+  background:#fff;
+  padding:30px;
+  border-radius:16px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.08);
+  align-items:center;
+  animation:fadeInUp 1s ease forwards;
+}
+.md-card img{
+  width:280px;
+  height:auto;
+  border-radius:12px;
+  object-fit:cover;
+  flex-shrink:0;
+}
+.md-info{flex:1;min-width:260px;}
+.md-info h3{margin:0;color:var(--blue1);font-size:26px;font-weight:800;}
+.md-info h4{margin:6px 0;color:var(--muted);font-style:italic;}
+.md-info p{margin:6px 0;color:var(--text);}
+
+/* === Certifications Section === */
+.section h2{
+  text-align:center;
+  margin-bottom:30px;
+  color:var(--blue1);
+  font-weight:800;
+  font-size:32px;
+}
+.badges{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:24px;
+}
+.badge{
+  background:#fff;
+  padding:20px;
+  border-radius:14px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.06);
+  flex:1;
+  min-width:240px;
+  max-width:320px;
+  text-align:center;
+  transition:.4s;
+}
+.badge img{height:80px;margin-bottom:10px;}
+.badge h5,.badge h6{margin:8px 0 0;color:var(--blue1);font-weight:700;}
+.badge:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(0,0,0,0.12);}
+
+/* === Footer === */
+footer{
+  margin-top:80px;
+  padding:24px;
+  text-align:center;
+  background:linear-gradient(90deg,var(--text),var(--blue1));
+  color:#fff;
+}
+footer .wm{margin-top:10px;font-weight:700;}
+
+/* === Animations === */
+@keyframes fadeInDown{from{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* === Responsive Design === */
+@media(max-width:992px){
+  .hero h2{font-size:36px;}
+  .hero p{font-size:16px;}
+  .brand img{width:50px;height:50px;}
+}
+@media(max-width:768px){
+  header{flex-direction:column;align-items:flex-start;}
+  nav{justify-content:center;width:100%;padding-top:8px;}
+  .hero{padding:60px 16px;}
+  .hero h2{font-size:30px;}
+  .md-card{flex-direction:column;text-align:center;}
+  .md-card img{width:220px;}
+}
+@media(max-width:480px){
+  .hero h2{font-size:26px;}
+  .hero p{font-size:15px;}
+  .badge{min-width:180px;}
+  footer{font-size:13px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- === Top Info Bar === -->
+<div class="top-bar">
+  <a href="mailto:mindoswiss@gmail.com">✉️ mindoswiss@gmail.com</a>
+  <a href="tel:+919919134791">📞 +91-9919134791</a>
+</div>
+
+<!-- === Header === -->
+<header>
+  <div class="brand">
+    <img src="logo.jpeg" alt="Indoswiss Medicon Logo">
+    <h1>Indoswiss Medicon™ </h1>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="PRODUCT.HTML">Products</a>
+    <a href="about.html" class="active">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- === Hero Section === -->
+<section class="hero">
+  <h2>About Indoswiss Medicon</h2>
+  <p>We are committed to providing high-quality, affordable, and reliable pharmaceutical products with international certifications and trust.  
+     Our mission is to improve global healthcare access with innovative formulations and consistent quality.</p>
+</section>
+
+<!-- === Managing Director Section === -->
+<section class="section">
+  <div class="md-card">
+    <img src="logo.jpeg" alt="Managing Director">
+    <div class="md-info">
+      <h3>Manoj Kumar Mishra</h3>
+      <h4>Managing Director</h4>
+      <p><strong>Cell:</strong> +91-99191 34791</p>
+      <p><strong>Corporate Address:</strong> Sanctoria No. 12, Post: Dishergarh, Distt. P. Burdwan - 713333 (West Bengal)</p>
+      <p><strong>Registered Office:</strong> H.No - 925, Avashvikash Colony, Kudaghat - Gorakhpur</p>
+      <p><strong>Email:</strong> mindoswiss@gmail.com</p>
+      <p>With years of dedication and expertise, he leads Indoswiss Medicon with a vision to bring advanced and safe medicines to every corner of India and beyond.</p>
+    </div>
+  </div>
+</section>
+
+<!-- === Certifications Section === -->
+<section class="section">
+  <h2>Our Certifications</h2>
+  <div class="badges">
+    <div class="badge">
+      <img src="img/iso certified logo.png" alt="ISO Certified">
+      <h5>ISO 9001:2015 Certified</h5>
+    </div>
+    <div class="badge">
+      <img src="img/WHO_on_white.png" alt="WHO Certified">
+      <h5>WHO Certified Products Manufacturer</h5>
+    </div>
+    <div class="badge">
+      <img src="img/GeM-dealer.png" alt="GeM Certified" style="height:60px">
+      <h5>GeM Registered</h5>
+      <h6>GeM Portal Seller ID: XFYF230007778042</h6>
+    </div>
+  </div>
+</section>
+
+<!-- === Footer === -->
+<footer>
+  <div>© 2025 Indoswiss Medicon — All rights reserved.</div>
+  <div class="wm">Design & Developed by Yash Prajapati</div>
+</footer>
+
+</body>
+</html>

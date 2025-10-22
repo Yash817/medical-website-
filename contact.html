@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Contact — Indoswiss Medicon</title>
+<link rel="icon" href="logo.jpeg" type="image/x-icon" />
+
+<style>
+:root{
+  --brand-1:#0a76a0;--brand-2:#00a8d6;--accent:#1fb27a;
+  --muted:#6b7280;--bg:#f6fbff;--card:#fff;
+  --radius:14px;--shadow:0 12px 40px rgba(6,20,40,0.08);
+  font-family:"Poppins",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:linear-gradient(180deg,var(--bg),#fff);color:#071227;overflow-x:hidden;}
+
+/* ===== TOP INFO BAR ===== */
+.top-bar{background:#0092ca;color:#fff;padding:6px 12px;font-size:14px;display:flex;justify-content:center;gap:25px;flex-wrap:wrap;}
+.top-bar a{color:#fff;text-decoration:none;font-weight:500;}
+
+/* ===== HEADER ===== */
+header{position:sticky;top:0;background:#fff;z-index:1000;box-shadow:0 2px 6px rgba(0,0,0,0.08);}
+.header-container{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:10px 20px;flex-wrap:wrap;}
+.brand{display:flex;align-items:center;gap:12px;}
+.logo{width:60px;height:60px;border-radius:50%;overflow:hidden;border:3px solid var(--brand-1);box-shadow:0 4px 12px rgba(0,0,0,0.1);}
+.logo img{width:100%;height:100%;object-fit:cover;}
+.brand-text{display:flex;flex-direction:column;}
+.site-title{font-weight:900;font-size:20px;color:var(--brand-1);}
+.tag{font-size:13px;color:var(--muted);}
+.nav-links{display:flex;flex-wrap:wrap;gap:14px;}
+.nav-links a{font-weight:600;text-decoration:none;color:var(--muted);transition:color .2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--brand-1);}
+
+/* ===== MAIN CONTAINER ===== */
+.container{max-width:1200px;margin:auto;padding:20px;}
+.grid{display:grid;grid-template-columns:1fr 420px;gap:22px;align-items:start;}
+@media(max-width:992px){.grid{grid-template-columns:1fr;gap:30px;}}
+
+/* ===== CARD STYLE ===== */
+.card{background:var(--card);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);transition:.3s;}
+.card:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(6,20,40,0.1);}
+.md-name{font-size:20px;font-weight:900;}
+.md-title{font-size:14px;color:var(--muted);margin-bottom:6px;}
+.detail-item{margin-top:10px;}
+.detail-item b{color:var(--muted);min-width:110px;display:inline-block;}
+.detail-item a{font-weight:700;color:#0b1220;text-decoration:none;}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 16px;border-radius:10px;border:none;cursor:pointer;font-weight:700;color:#fff;background:linear-gradient(90deg,var(--brand-1),var(--brand-2));transition:.25s;}
+.btn:hover{transform:translateY(-2px);}
+.btn.secondary{background:#fff;color:var(--brand-1);border:1.5px solid rgba(10,118,160,0.2);}
+.bc-preview{margin-top:18px;border-radius:10px;overflow:hidden;border:1px solid rgba(0,0,0,0.06);}
+.bc-preview img{width:100%;height:auto;display:block;}
+
+/* ===== FORM ===== */
+form .row{display:flex;flex-direction:column;gap:6px;margin-bottom:10px;}
+input,textarea{padding:10px;border-radius:8px;border:1px solid #e6eef4;background:#fbfeff;font-size:14px;}
+input:focus,textarea:focus{border-color:var(--brand-1);box-shadow:0 6px 20px rgba(10,118,160,0.08);}
+textarea{min-height:100px;resize:vertical;}
+.form-note{font-size:13px;color:var(--muted);margin-top:6px;}
+@media(max-width:600px){input,textarea{font-size:15px;}}
+
+/* ===== FLOATING BUTTON ===== */
+.fab{position:fixed;right:18px;bottom:18px;background:linear-gradient(90deg,var(--brand-1),var(--brand-2));color:#fff;padding:12px 20px;border-radius:999px;box-shadow:0 14px 40px rgba(10,118,160,0.18);display:flex;gap:10px;align-items:center;z-index:120;}
+.fab a{color:#fff;text-decoration:none;font-weight:700;}
+
+/* ===== MODAL (Success tick) ===== */
+.modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;z-index:1000;opacity:0;pointer-events:none;transition:opacity .3s;}
+.modal-overlay.show{opacity:1;pointer-events:auto;}
+.modal-box{background:#fff;padding:35px 40px;border-radius:14px;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,0.2);animation:pop .4s ease;}
+@keyframes pop{0%{transform:scale(.8);opacity:0;}100%{transform:scale(1);opacity:1;}}
+.checkmark{width:80px;height:80px;border-radius:50%;stroke-width:2;stroke:var(--accent);stroke-miterlimit:10;animation:fill .4s ease-in-out .4s forwards,scale .3s ease-in-out .9s both;}
+.checkmark__circle{stroke-dasharray:166;stroke-dashoffset:166;stroke:var(--accent);fill:none;animation:stroke .6s cubic-bezier(0.65,0,0.45,1) forwards;}
+.checkmark__check{transform-origin:50% 50%;stroke-dasharray:48;stroke-dashoffset:48;animation:stroke .3s cubic-bezier(0.65,0,0.45,1) .8s forwards;}
+@keyframes stroke{100%{stroke-dashoffset:0;}}
+@keyframes scale{50%{transform:scale(1.1);}100%{transform:scale(1);}}
+@keyframes fill{100%{box-shadow:inset 0 0 0 40px var(--accent);}}
+.modal-box h3{color:var(--brand-1);margin-top:16px;}
+.modal-box p{color:var(--muted);font-size:15px;}
+.modal-box button{margin-top:16px;padding:10px 18px;border:none;border-radius:8px;background:linear-gradient(90deg,var(--brand-1),var(--brand-2));color:#fff;font-weight:700;cursor:pointer;}
+
+/* ===== FOOTER ===== */
+footer{margin-top:40px;padding:24px 12px;text-align:center;background:linear-gradient(90deg,#062e3b,#0b7285);color:#fff;}
+footer .credit{margin-top:8px;font-weight:700;}
+</style>
+</head>
+
+<body>
+
+<!-- Top Info Bar -->
+<div class="top-bar">
+  <a href="mailto:mindoswiss@gmail.com">✉️ mindoswiss@gmail.com</a>
+  <a href="tel:+919919134791">📞 +91-9919134791</a>
+</div>
+
+<div class="container">
+<header>
+  <div class="header-container">
+    <div class="brand">
+      <div class="logo"><img src="logo.jpeg" alt="Indoswiss Medicon"></div>
+      <div class="brand-text">
+        <div class="site-title">INDOSWISS <span style="color:var(--brand-2)">MEDICON™ </span></div>
+        <div class="tag">ISO 9001:2015 Certified | Life's better when you're healthy</div>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="PRODUCT.HTML">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="grid">
+  <!-- LEFT COLUMN -->
+  <section class="card">
+    <div class="md-name">Manoj Kumar Mishra</div>
+    <div class="md-title">Managing Director</div>
+    <div class="detail-item"><b>Cell No.:</b> <a href="tel:+919919134791">+91-99191-34791</a></div>
+    <div class="detail-item"><b>Email:</b> <a href="mailto:mindoswiss@gmail.com">mindoswiss@gmail.com</a></div>
+    <div class="detail-item"><b>Address:</b> Sanctoria No.12, Post: Dishergar, Distt. P Burdwan - 713333 (WB)</div>
+    <div class="detail-item"><b>Registered Office:</b> H.No - 925, Avashvikash Colony, Kudaghat - Gorakhpur</div>
+
+    <div class="actions">
+      <a class="btn" href="tel:+919919134791">📞 Call</a>
+      <a class="btn secondary" id="downloadCardBtn">📇 Business Card</a>
+      <a class="btn secondary" href="Indoswiss_Catalogue.pdf" target="_blank">📘 View Catalogue</a>
+      <button class="btn secondary" id="downloadVcard">💾 vCard</button>
+    </div>
+    <div class="bc-preview"><img src="Indoswiss dealer card.jpeg" alt="Business Card Preview"></div>
+  </section>
+
+  <!-- RIGHT COLUMN -->
+  <aside class="card">
+    <div style="font-weight:800;font-size:18px;margin-bottom:8px;">Send an Enquiry</div>
+    <form id="contactForm" onsubmit="return handleSubmit(event)">
+      <div class="row"><label for="fullname">Full Name</label><input id="fullname" required></div>
+      <div class="row"><label for="email">Email</label><input id="email" type="email" required></div>
+      <div class="row"><label for="phone">Phone</label><input id="phone" type="tel"></div>
+      <div class="row"><label for="subject">Subject</label><input id="subject" required></div>
+      <div class="row"><label for="message">Message</label><textarea id="message" required></textarea></div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <button class="btn" type="submit">Send Enquiry</button>
+        <button type="button" class="btn secondary" onclick="clearForm()">Clear</button>
+      </div>
+      <div class="form-note" id="formNote"></div>
+    </form>
+  </aside>
+</main>
+
+<div class="fab">
+  <a href="tel:+919919134791">📞 Call</a>
+  <a href="mailto:mindoswiss@gmail.com">✉️ Email</a>
+</div>
+
+<!-- SUCCESS MODAL -->
+<div class="modal-overlay" id="successModal">
+  <div class="modal-box">
+    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+      <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+      <path class="checkmark__check" fill="none" d="M14 27l7 7 16-16"/>
+    </svg>
+    <h3>Thank You!</h3>
+    <p>Your enquiry is ready — we’re opening your email app.</p>
+    <button onclick="closeModal()">OK</button>
+  </div>
+</div>
+
+<footer>
+  <div>© 2025 Indoswiss Medicon — All rights reserved.</div>
+  <div class="credit">Design & Developed by Yash Prajapati</div>
+</footer>
+</div>
+
+<script>
+function handleSubmit(e){
+  e.preventDefault();
+  const name=document.getElementById('fullname').value.trim();
+  const phone=document.getElementById('phone').value.trim();
+  const email=document.getElementById('email').value.trim();
+  const subject=document.getElementById('subject').value.trim();
+  const message=document.getElementById('message').value.trim();
+  if(!name||!email||!subject){
+    document.getElementById('formNote').textContent='Please fill all required fields.';
+    return false;
+  }
+  const to='mindoswiss@gmail.com';
+  const body=`Enquiry from website:\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nSubject: ${subject}\n\nMessage:\n${message}\n\nRegards,\n${name}`;
+  const mailto=`mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href=mailto;
+  openModal();clearForm();
+  return false;
+}
+function clearForm(){document.getElementById('contactForm').reset();document.getElementById('formNote').textContent='';}
+function openModal(){document.getElementById('successModal').classList.add('show');}
+function closeModal(){document.getElementById('successModal').classList.remove('show');}
+document.getElementById('downloadCardBtn').addEventListener('click',()=>{const a=document.createElement('a');a.href='business-card.jpg';a.download='Indoswiss_Business_Card.jpg';a.click();});
+document.getElementById('downloadVcard').addEventListener('click',()=>{const v=['BEGIN:VCARD','VERSION:3.0','FN:Manoj Kumar Mishra','ORG:Indoswiss Medicon','TITLE:Managing Director','TEL:+91-9919134791','EMAIL:mindoswiss@gmail.com','ADR;TYPE=WORK:;;Sanctoria No.12;Dishergar;P Burdwan;713333;India','END:VCARD'].join('\r\n');const b=new Blob([v],{type:'text/vcard'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='Manoj_Kumar_Mishra.vcf';a.click();setTimeout(()=>URL.revokeObjectURL(u),2000);});
+</script>
+</body>
+</html>
