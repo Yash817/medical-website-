@@ -1,205 +1,1235 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Contact — Indoswiss Medicon</title>
-<link rel="icon" href="logo.jpeg" type="image/x-icon" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Indoswiss Medicon - Get in touch with us for pharmaceutical inquiries, product information, and business partnerships.">
+    <title>Contact Us - Indoswiss Medicon</title>
+    <link rel="icon" href="logo.jpeg" type="image/jpeg">    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
-:root{
-  --brand-1:#0a76a0;--brand-2:#00a8d6;--accent:#1fb27a;
-  --muted:#6b7280;--bg:#f6fbff;--card:#fff;
-  --radius:14px;--shadow:0 12px 40px rgba(6,20,40,0.08);
-  font-family:"Poppins",sans-serif;
-}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{background:linear-gradient(180deg,var(--bg),#fff);color:#071227;overflow-x:hidden;}
+        :root {
+            --primary: #0a76a0;
+            --secondary: #00a8d6;
+            --accent: #1fb27a;
+            --text-gray: #6b7280;
+            --bg-light: #f8fbfc;
+            --white: #ffffff;
+            --gradient-primary: linear-gradient(135deg, #0a76a0, #00a8d6);
+            --gradient-accent: linear-gradient(135deg, #00a8d6, #1fb27a);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
+            --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.2);
+            --border-radius: 16px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-/* ===== TOP INFO BAR ===== */
-.top-bar{background:#0092ca;color:#fff;padding:6px 12px;font-size:14px;display:flex;justify-content:center;gap:25px;flex-wrap:wrap;}
-.top-bar a{color:#fff;text-decoration:none;font-weight:500;}
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-light);
+            color: #1f2937;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
 
-/* ===== HEADER ===== */
-header{position:sticky;top:0;background:#fff;z-index:1000;box-shadow:0 2px 6px rgba(0,0,0,0.08);}
-.header-container{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:10px 20px;flex-wrap:wrap;}
-.brand{display:flex;align-items:center;gap:12px;}
-.logo{width:60px;height:60px;border-radius:50%;overflow:hidden;border:3px solid var(--brand-1);box-shadow:0 4px 12px rgba(0,0,0,0.1);}
-.logo img{width:100%;height:100%;object-fit:cover;}
-.brand-text{display:flex;flex-direction:column;}
-.site-title{font-weight:900;font-size:20px;color:var(--brand-1);}
-.tag{font-size:13px;color:var(--muted);}
-.nav-links{display:flex;flex-wrap:wrap;gap:14px;}
-.nav-links a{font-weight:600;text-decoration:none;color:var(--muted);transition:color .2s;}
-.nav-links a:hover,.nav-links a.active{color:var(--brand-1);}
+        html {
+            scroll-behavior: smooth;
+        }
 
-/* ===== MAIN CONTAINER ===== */
-.container{max-width:1200px;margin:auto;padding:20px;}
-.grid{display:grid;grid-template-columns:1fr 420px;gap:22px;align-items:start;}
-@media(max-width:992px){.grid{grid-template-columns:1fr;gap:30px;}}
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
-/* ===== CARD STYLE ===== */
-.card{background:var(--card);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);transition:.3s;}
-.card:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(6,20,40,0.1);}
-.md-name{font-size:20px;font-weight:900;}
-.md-title{font-size:14px;color:var(--muted);margin-bottom:6px;}
-.detail-item{margin-top:10px;}
-.detail-item b{color:var(--muted);min-width:110px;display:inline-block;}
-.detail-item a{font-weight:700;color:#0b1220;text-decoration:none;}
-.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 16px;border-radius:10px;border:none;cursor:pointer;font-weight:700;color:#fff;background:linear-gradient(90deg,var(--brand-1),var(--brand-2));transition:.25s;}
-.btn:hover{transform:translateY(-2px);}
-.btn.secondary{background:#fff;color:var(--brand-1);border:1.5px solid rgba(10,118,160,0.2);}
-.bc-preview{margin-top:18px;border-radius:10px;overflow:hidden;border:1px solid rgba(0,0,0,0.06);}
-.bc-preview img{width:100%;height:auto;display:block;}
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-/* ===== FORM ===== */
-form .row{display:flex;flex-direction:column;gap:6px;margin-bottom:10px;}
-input,textarea{padding:10px;border-radius:8px;border:1px solid #e6eef4;background:#fbfeff;font-size:14px;}
-input:focus,textarea:focus{border-color:var(--brand-1);box-shadow:0 6px 20px rgba(10,118,160,0.08);}
-textarea{min-height:100px;resize:vertical;}
-.form-note{font-size:13px;color:var(--muted);margin-top:6px;}
-@media(max-width:600px){input,textarea{font-size:15px;}}
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-/* ===== FLOATING BUTTON ===== */
-.fab{position:fixed;right:18px;bottom:18px;background:linear-gradient(90deg,var(--brand-1),var(--brand-2));color:#fff;padding:12px 20px;border-radius:999px;box-shadow:0 14px 40px rgba(10,118,160,0.18);display:flex;gap:10px;align-items:center;z-index:120;}
-.fab a{color:#fff;text-decoration:none;font-weight:700;}
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
 
-/* ===== MODAL (Success tick) ===== */
-.modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;z-index:1000;opacity:0;pointer-events:none;transition:opacity .3s;}
-.modal-overlay.show{opacity:1;pointer-events:auto;}
-.modal-box{background:#fff;padding:35px 40px;border-radius:14px;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,0.2);animation:pop .4s ease;}
-@keyframes pop{0%{transform:scale(.8);opacity:0;}100%{transform:scale(1);opacity:1;}}
-.checkmark{width:80px;height:80px;border-radius:50%;stroke-width:2;stroke:var(--accent);stroke-miterlimit:10;animation:fill .4s ease-in-out .4s forwards,scale .3s ease-in-out .9s both;}
-.checkmark__circle{stroke-dasharray:166;stroke-dashoffset:166;stroke:var(--accent);fill:none;animation:stroke .6s cubic-bezier(0.65,0,0.45,1) forwards;}
-.checkmark__check{transform-origin:50% 50%;stroke-dasharray:48;stroke-dashoffset:48;animation:stroke .3s cubic-bezier(0.65,0,0.45,1) .8s forwards;}
-@keyframes stroke{100%{stroke-dashoffset:0;}}
-@keyframes scale{50%{transform:scale(1.1);}100%{transform:scale(1);}}
-@keyframes fill{100%{box-shadow:inset 0 0 0 40px var(--accent);}}
-.modal-box h3{color:var(--brand-1);margin-top:16px;}
-.modal-box p{color:var(--muted);font-size:15px;}
-.modal-box button{margin-top:16px;padding:10px 18px;border:none;border-radius:8px;background:linear-gradient(90deg,var(--brand-1),var(--brand-2));color:#fff;font-weight:700;cursor:pointer;}
+        @keyframes modalPop {
+            0% {
+                opacity: 0;
+                transform: scale(0.7) translateY(30px);
+            }
+            70% {
+                transform: scale(1.05) translateY(0);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
 
-/* ===== FOOTER ===== */
-footer{margin-top:40px;padding:24px 12px;text-align:center;background:linear-gradient(90deg,#062e3b,#0b7285);color:#fff;}
-footer .credit{margin-top:8px;font-weight:700;}
-</style>
+        @keyframes checkmark {
+            0% {
+                stroke-dashoffset: 100;
+            }
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes checkmarkCircle {
+            0% {
+                stroke-dashoffset: 166;
+            }
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes shimmer {
+            to { left: 100%; }
+        }
+
+        /* Top Info Bar */
+        .top-bar {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 12px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .top-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        .top-bar-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        .top-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .top-bar-item svg {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+        .top-bar-item a {
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .top-bar-item a:hover {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            transform: translateX(2px);
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-image {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(10, 118, 160, 0.3));
+            border-radius: 10px;
+            background: linear-gradient(135deg, rgba(10, 118, 160, 0.1), rgba(0, 168, 214, 0.1));
+            padding: 6px;
+            transition: var(--transition);
+        }
+
+        .logo-image:hover {
+            transform: scale(1.05) rotate(2deg);
+            filter: drop-shadow(0 4px 8px rgba(10, 118, 160, 0.5));
+        }
+
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        nav a {
+            color: #1f2937;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a:hover {
+            background: rgba(0, 168, 214, 0.1);
+            color: var(--primary);
+        }
+
+        nav a.active {
+            background: rgba(0, 168, 214, 0.15);
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e0f2f7 0%, #ffffff 100%);
+            padding: 60px 20px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(10, 118, 160, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 168, 214, 0.08) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        /* Main Contact Section */
+        .contact-section {
+            max-width: 1400px;
+            margin: -20px auto 80px;
+            padding: 0 20px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 30px;
+        }
+
+        /* Contact Info Card */
+        .contact-info-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            padding: 40px;
+            transition: var(--transition);
+            animation: fadeInUp 0.8s ease-out 0.3s backwards;
+        }
+
+        .contact-info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .md-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .md-name {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .md-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 18px;
+            padding: 12px;
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            background: rgba(0, 168, 214, 0.05);
+        }
+
+        .contact-item svg {
+            width: 22px;
+            height: 22px;
+            color: var(--primary);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .contact-item-content {
+            flex: 1;
+        }
+
+        .contact-item-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .contact-item-value {
+            font-size: 1rem;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        .contact-item-value a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-item-value a:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+
+        .action-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .action-btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .action-btn-primary {
+            background: var(--gradient-primary);
+            color: var(--white);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .action-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .action-btn-secondary {
+            background: var(--white);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .action-btn-secondary:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .action-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .business-card-preview {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .business-card-preview:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-md);
+        }
+
+        .business-card-preview img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Contact Form */
+        .contact-form-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            padding: 40px;
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+
+        .form-header {
+            margin-bottom: 30px;
+        }
+
+        .form-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .form-header p {
+            color: var(--text-gray);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #1f2937;
+            font-size: 0.95rem;
+        }
+
+        .form-group label .required {
+            color: #ef4444;
+            margin-left: 2px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(10, 118, 160, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .form-actions button {
+            flex: 1;
+            padding: 14px 24px;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .submit-btn {
+            background: var(--gradient-accent);
+            color: var(--white);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .clear-btn {
+            background: #f3f4f6;
+            color: var(--text-gray);
+        }
+
+        .clear-btn:hover {
+            background: #e5e7eb;
+            color: #1f2937;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 50px 40px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: var(--shadow-xl);
+            transform: scale(0.7) translateY(30px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .modal-overlay.active .modal-content {
+            animation: modalPop 0.5s ease-out forwards;
+        }
+
+        .checkmark-container {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 30px;
+        }
+
+        .checkmark-circle {
+            stroke: var(--accent);
+            stroke-width: 3;
+            fill: none;
+            stroke-dasharray: 166;
+            stroke-dashoffset: 166;
+        }
+
+        .modal-overlay.active .checkmark-circle {
+            animation: checkmarkCircle 0.6s ease-out 0.2s forwards;
+        }
+
+        .checkmark-check {
+            stroke: var(--accent);
+            stroke-width: 3;
+            fill: none;
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+        }
+
+        .modal-overlay.active .checkmark-check {
+            animation: checkmark 0.4s ease-out 0.6s forwards;
+        }
+
+        .modal-content h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .modal-content p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .modal-close-btn {
+            background: var(--gradient-primary);
+            color: var(--white);
+            border: none;
+            padding: 12px 32px;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .modal-close-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Floating Action Button */
+        .fab-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1500;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .fab {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .fab:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .fab svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .fab-phone {
+            background: var(--gradient-accent);
+        }
+
+        .fab-email {
+            background: var(--gradient-primary);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1f2937, var(--primary));
+            color: var(--white);
+            padding: 40px 20px 20px;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-content p {
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .developer-credit {
+            font-size: 0.95rem;
+            margin-top: 10px;
+        }
+
+        .developer-credit a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .developer-credit a:hover {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .action-buttons {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: var(--shadow-md);
+                gap: 5px;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                width: 100%;
+                text-align: center;
+            }
+
+            .top-bar-content {
+                gap: 20px;
+                font-size: 0.85rem;
+            }
+
+            .contact-info-card,
+            .contact-form-card {
+                padding: 30px 20px;
+            }
+
+            .md-name {
+                font-size: 1.6rem;
+            }
+
+            .form-header h2 {
+                font-size: 1.6rem;
+            }
+
+            .fab-container {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .fab {
+                width: 55px;
+                height: 55px;
+            }
+
+            .fab svg {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .modal-content {
+                padding: 40px 30px;
+            }
+
+            .form-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
-
 <body>
-
-<!-- Top Info Bar -->
-<div class="top-bar">
-  <a href="mailto:mindoswiss@gmail.com">✉️ mindoswiss@gmail.com</a>
-  <a href="tel:+919919134791">📞 +91-9919134791</a>
-</div>
-
-<div class="container">
-<header>
-  <div class="header-container">
-    <div class="brand">
-      <div class="logo"><img src="logo.jpeg" alt="Indoswiss Medicon"></div>
-      <div class="brand-text">
-        <div class="site-title">INDOSWISS <span style="color:var(--brand-2)">MEDICON™ </span></div>
-        <div class="tag">ISO 9001:2015 Certified | Life's better when you're healthy</div>
-      </div>
+    <!-- Top Info Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="16" rx="2" />
+                    <path d="m3 8 9 6 9-6" />
+                </svg>
+                <a href="mailto:mindoswiss@gmail.com">mindoswiss@gmail.com</a>
+            </div>
+            <div class="top-bar-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                <a href="tel:+919919134791">+91 9919134791</a>
+            </div>
+        </div>
     </div>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="PRODUCT.HTML">Products</a>
-      <a href="about.html">About</a>
-      <a href="contact.html" class="active">Contact</a>
-    </nav>
-  </div>
-</header>
-  <br>
 
-<main class="grid">
-  <!-- LEFT COLUMN -->
-  <section class="card">
-    <div class="md-name">Manoj Kumar Mishra</div>
-    <div class="md-title">Managing Director</div>
-    <div class="detail-item"><b>Cell No.:</b> <a href="tel:+919919134791">+91-99191-34791</a></div>
-    <div class="detail-item"><b>Email:</b> <a href="mailto:mindoswiss@gmail.com">mindoswiss@gmail.com</a></div>
-    <div class="detail-item"><b>Address:</b> Sanctoria No.12, Post: Dishergar, Distt. P Burdwan - 713333 (WB)</div>
-    <div class="detail-item"><b>Registered Office:</b> H.No - 925, Avashvikash Colony, Kudaghat - Gorakhpur</div>
+    <!-- Header -->
+    <header id="header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="logo.jpeg" alt="Indoswiss Medicon Logo" class="logo-image">
+                <div class="logo-text">INDOSWISS MEDICON</div>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <nav id="nav">
+                <a href="index.html">Home</a>
+                <a href="PRODUCT.HTML">Products</a>
+                <a href="about.html">About</a>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-    <div class="actions">
-      <a class="btn" href="tel:+919919134791">📞 Call</a>
-      <a class="btn secondary" id="downloadCardBtn">📇 Business Card</a>
-      <a class="btn secondary" href="Indoswiss_Catalogue.pdf" target="_blank">📘 View Catalogue</a>
-      <button class="btn secondary" id="downloadVcard">💾 vCard</button>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Contact Us</h1>
+            <p>Get in touch with us for pharmaceutical inquiries, product information, and business partnerships</p>
+        </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section class="contact-section">
+        <div class="contact-grid">
+            <!-- Contact Info Card -->
+            <div class="contact-info-card">
+                <div class="md-header">
+                    <h2 class="md-name">MR. MANOJ KUMAR MISHRA</h2>
+                    <p class="md-title">Managing Director</p>
+                </div>
+
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
+                        <div class="contact-item-content">
+                            <div class="contact-item-label">Phone</div>
+                            <div class="contact-item-value">
+                                <a href="tel:+919919134791">+91 9919134791</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="16" rx="2" />
+                            <path d="m3 8 9 6 9-6" />
+                        </svg>
+                        <div class="contact-item-content">
+                            <div class="contact-item-label">Email</div>
+                            <div class="contact-item-value">
+                                <a href="mailto:mindoswiss@gmail.com">mindoswiss@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        <div class="contact-item-content">
+                            <div class="contact-item-label">Corporate Office</div>
+                            <div class="contact-item-value">
+                                Sanctoria No. 12, Post: Dishergarh, Distt. P. Burdwan - 713333 (West Bengal)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        <div class="contact-item-content">
+                            <div class="contact-item-label">Registered Office</div>
+                            <div class="contact-item-value">
+                                H.No - 925, Avashvikash Colony, Kudaghat - Gorakhpur
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <a href="tel:+919919134791" class="action-btn action-btn-primary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
+                        Call Now
+                    </a>
+                    <a href="Indoswiss_Catalogue.pdf" class="action-btn action-btn-secondary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                        </svg>
+                        View Catalogue
+                    </a>
+                    <button class="action-btn action-btn-secondary" onclick="downloadBusinessCard()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="7 10 12 15 17 10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
+                        </svg>
+                        Business Card
+                    </button>
+                    <button class="action-btn action-btn-primary" onclick="downloadVCard()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="8.5" cy="7" r="4" />
+                            <line x1="20" y1="8" x2="20" y2="14" />
+                            <line x1="23" y1="11" x2="17" y2="11" />
+                        </svg>
+                        Download vCard
+                    </button>
+                </div>
+
+                <div class="business-card-preview">
+                    <img src="Indoswiss dealer card.jpeg" alt="Business Card Preview" id="businessCardImage">
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-card">
+                <div class="form-header">
+                    <h2>Send us a Message</h2>
+                    <p>Fill out the form below and we'll get back to you as soon as possible</p>
+                </div>
+
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name <span class="required">*</span></label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+91 9999999999">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject <span class="required">*</span></label>
+                        <input type="text" id="subject" name="subject" required placeholder="What is this regarding?">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message <span class="required">*</span></label>
+                        <textarea id="message" name="message" required placeholder="Tell us more about your inquiry..."></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn">Send Message</button>
+                        <button type="button" class="clear-btn" onclick="clearForm()">Clear Form</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal-content">
+            <div class="checkmark-container">
+                <svg viewBox="0 0 52 52">
+                    <circle class="checkmark-circle" cx="26" cy="26" r="25" />
+                    <path class="checkmark-check" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                </svg>
+            </div>
+            <h3>Message Sent!</h3>
+            <p>Thank you for contacting us. We'll get back to you shortly via email.</p>
+            <button class="modal-close-btn" onclick="closeModal()">Close</button>
+        </div>
     </div>
-    <div class="bc-preview"><img src="Indoswiss dealer card.jpeg" alt="Business Card Preview"></div>
-  </section>
 
-  <!-- RIGHT COLUMN -->
-  <aside class="card">
-    <div style="font-weight:800;font-size:18px;margin-bottom:8px;">Send an Enquiry</div>
-    <form id="contactForm" onsubmit="return handleSubmit(event)">
-      <div class="row"><label for="fullname">Full Name</label><input id="fullname" required></div>
-      <div class="row"><label for="email">Email</label><input id="email" type="email" required></div>
-      <div class="row"><label for="phone">Phone</label><input id="phone" type="tel"></div>
-      <div class="row"><label for="subject">Subject</label><input id="subject" required></div>
-      <div class="row"><label for="message">Message</label><textarea id="message" required></textarea></div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;">
-        <button class="btn" type="submit">Send Enquiry</button>
-        <button type="button" class="btn secondary" onclick="clearForm()">Clear</button>
-      </div>
-      <div class="form-note" id="formNote"></div>
-    </form>
-  </aside>
-</main>
+    <!-- Floating Action Buttons -->
+    <div class="fab-container">
+        <a href="tel:+919919134791" class="fab fab-phone" title="Call Us">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+        </a>
+        <a href="mailto:mindoswiss@gmail.com" class="fab fab-email" title="Email Us">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="16" rx="2" />
+                <path d="m3 8 9 6 9-6" />
+            </svg>
+        </a>
+    </div>
 
-<div class="fab">
-  <a href="tel:+919919134791">📞 Call</a>
-  <a href="mailto:mindoswiss@gmail.com">✉️ Email</a>
-</div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <span id="currentYear"></span> Indoswiss Medicon — All rights reserved</p>
+            <p class="developer-credit">Design & Developed by <a href="https://pixcelyash.space" target="_blank">Yash Prajapati</a></p>
+        </div>
+    </footer>
 
-<!-- SUCCESS MODAL -->
-<div class="modal-overlay" id="successModal">
-  <div class="modal-box">
-    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-      <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
-      <path class="checkmark__check" fill="none" d="M14 27l7 7 16-16"/>
-    </svg>
-    <h3>Thank You!</h3>
-    <p>Your enquiry is ready — we’re opening your email app.</p>
-    <button onclick="closeModal()">OK</button>
-  </div>
-</div>
+    <script>
+        // Set current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-<footer>
-  <div>© 2025 Indoswiss Medicon — All rights reserved.</div>
-  <div class="credit">Design & Developed by Yash Prajapati</div>
-</footer>
-</div>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const nav = document.getElementById('nav');
 
-<script>
-function handleSubmit(e){
-  e.preventDefault();
-  const name=document.getElementById('fullname').value.trim();
-  const phone=document.getElementById('phone').value.trim();
-  const email=document.getElementById('email').value.trim();
-  const subject=document.getElementById('subject').value.trim();
-  const message=document.getElementById('message').value.trim();
-  if(!name||!email||!subject){
-    document.getElementById('formNote').textContent='Please fill all required fields.';
-    return false;
-  }
-  const to='mindoswiss@gmail.com';
-  const body=`Enquiry from website:\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nSubject: ${subject}\n\nMessage:\n${message}\n\nRegards,\n${name}`;
-  const mailto=`mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  window.location.href=mailto;
-  openModal();clearForm();
-  return false;
-}
-function clearForm(){document.getElementById('contactForm').reset();document.getElementById('formNote').textContent='';}
-function openModal(){document.getElementById('successModal').classList.add('show');}
-function closeModal(){document.getElementById('successModal').classList.remove('show');}
-document.getElementById('downloadCardBtn').addEventListener('click',()=>{const a=document.createElement('a');a.href='business-card.jpg';a.download='Indoswiss_Business_Card.jpg';a.click();});
-document.getElementById('downloadVcard').addEventListener('click',()=>{const v=['BEGIN:VCARD','VERSION:3.0','FN:Manoj Kumar Mishra','ORG:Indoswiss Medicon','TITLE:Managing Director','TEL:+91-9919134791','EMAIL:mindoswiss@gmail.com','ADR;TYPE=WORK:;;Sanctoria No.12;Dishergar;P Burdwan;713333;India','END:VCARD'].join('\r\n');const b=new Blob([v],{type:'text/vcard'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='Manoj_Kumar_Mishra.vcf';a.click();setTimeout(()=>URL.revokeObjectURL(u),2000);});
-</script>
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Contact Form Submission
+        const contactForm = document.getElementById('contactForm');
+        const successModal = document.getElementById('successModal');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Get form data
+            const formData = new FormData(contactForm);
+            const fullName = formData.get('fullName');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+
+            // Create mailto link
+            const mailtoSubject = encodeURIComponent(`Contact Form: ${subject}`);
+            const mailtoBody = encodeURIComponent(
+                `Name: ${fullName}\n` +
+                `Email: ${email}\n` +
+                `Phone: ${phone}\n\n` +
+                `Message:\n${message}\n\n` +
+                `---\n` +
+                `This message was sent from the Indoswiss Medicon contact form.`
+            );
+
+            // Open email client
+            window.location.href = `mailto:mindoswiss@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+
+            // Show success modal
+            showModal();
+
+            // Clear form
+            contactForm.reset();
+        });
+
+        // Clear Form
+        function clearForm() {
+            contactForm.reset();
+        }
+
+        // Modal Functions
+        function showModal() {
+            successModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            successModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal when clicking outside
+        successModal.addEventListener('click', (e) => {
+            if (e.target === successModal) {
+                closeModal();
+            }
+        });
+
+        // Download Business Card
+        function downloadBusinessCard() {
+            const link = document.createElement('a');
+            link.href = document.getElementById('businessCardImage').src;
+            link.download = 'Indoswiss-Medicon-Business-Card.jpg';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Download vCard
+        function downloadVCard() {
+            const vCardData = `BEGIN:VCARD
+VERSION:3.0
+FN:Dr. Rajesh Kumar
+TITLE:Managing Director
+ORG:Indoswiss Medicon
+TEL;TYPE=WORK,VOICE:+91 9919134791
+EMAIL:mindoswiss@gmail.com
+ADR;TYPE=WORK:;;Sector 63;Noida;Uttar Pradesh;201301;India
+ADR;TYPE=HOME:;;Plot No. 45, Industrial Area, Phase-II;Panchkula;Haryana;134113;India
+URL:https://indoswissmedicon.com
+NOTE:WHO and ISO-certified pharmaceutical excellence, delivering high-quality medicines trusted globally.
+END:VCARD`;
+
+            const blob = new Blob([vCardData], { type: 'text/vcard' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'Dr-Rajesh-Kumar-Indoswiss-Medicon.vcf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
 
