@@ -373,13 +373,28 @@
             box-shadow: var(--shadow-lg);
         }
 
-        .product-image {
+        /* Image area wrapper to keep all product images uniform */
+        .product-image-wrapper {
             width: 100%;
-            height: 220px;
-            object-fit: cover;
-            transition: var(--transition);
+            height: 220px; /* fixed box height for uniform layout */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
             background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
         }
+
+        .product-image {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain; /* show whole product inside the box */
+            transition: var(--transition);
+            display: block;
+        }
+
+        /* If you prefer images to fully fill and crop, change object-fit to 'cover' */
 
         .product-card:hover .product-image {
             transform: scale(1.1);
@@ -539,11 +554,19 @@
 
         .modal-product-image {
             width: 100%;
-            height: 350px;
-            object-fit: cover;
+            max-width: 700px;
+            height: auto;
+            object-fit: contain; /* show whole product image inside modal */
             border-radius: var(--border-radius);
             margin-bottom: 24px;
             background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+
+        .modal-image-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 0 24px;
         }
 
         .modal-product-details {
@@ -970,7 +993,7 @@
                 pack: '1 Vial',
                 mrp: '₹1,067/-',
                 description: 'Meropenem 1 Gm (tray Pack).',
-                image: 'product-images/INPENAM.PNG'
+                image: 'https://i.postimg.cc/5yrLhwx8/Chat-GPT-Image-Nov-28-2025-02-09-42-PM.png'
             },
             {
                 id: 2,
@@ -980,7 +1003,7 @@
                 pack: '1 Vial',
                 mrp: '₹355/-',
                 description: 'PiperacillinE 4 Gm + Tazobactam 500 Mg (tray Pack)',
-                image: 'product-images/224.jpeg'
+                image: 'https://i.postimg.cc/x1fgLPXK/Chat-GPT-Image-Nov-28-2025-02-19-27-PM.png'
             },
             {
                 id: 3,
@@ -990,7 +1013,7 @@
                 pack: '1 Vial',
                 mrp: '₹375/-',
                 description: 'Amoxycillin 1000 mg + Sulbactam 500 Gm..',
-                image: 'https://images.unsplash.com/photo-1671108503276-1d3d5ab23a3a?w=400'
+                image: 'https://i.postimg.cc/x1fgLPXK/Chat-GPT-Image-Nov-28-2025-02-19-27-PM.png'
             },
             {
                 id: 4,
@@ -1000,7 +1023,7 @@
                 pack: '1 Vial',
                 mrp: '₹375/-',
                 description: 'Amoxcyilling 250gm + Sulbactam 150gm',
-                image: 'https://images.unsplash.com/photo-1671108503276-1d3d5ab23a3a?w=400'
+                image: 'https://i.postimg.cc/T27fmtNP/Chat-GPT-Image-Nov-28-2025-02-41-32-PM.png'
             },
             {
                 id: 5,
@@ -1010,7 +1033,7 @@
                 pack: '1 Vial',
                 mrp: '₹69.80/-',
                 description: 'Ceftriaxone 1 gm.',
-                image: 'product-images/swisszone.png'
+                image: 'https://i.postimg.cc/XNwYCKSJ/Chat-GPT-Image-Nov-28-2025-02-33-52-PM.png'
             },
             {
                 id: 6,
@@ -1020,7 +1043,7 @@
                 pack: '1 Vial',
                 mrp: '₹56/-',
                 description: 'Pantoprazole 40mg inj.',
-                image: 'product-images/5.png'
+                image: 'https://i.postimg.cc/5tw018mv/Chat-GPT-Image-Nov-28-2025-02-22-35-PM.png'
             },
             {
                 id: 7,
@@ -1030,7 +1053,7 @@
                 pack: '1 Ampoule',
                 mrp: '₹20/-',
                 description: 'Diclofenac-Sodium Inj. 1 ML ',
-                image: 'product-images/23.jpeg'
+                image: 'https://i.postimg.cc/hj2zVSx3/Chat-GPT-Image-Nov-28-2025-01-33-57-PM.png'
             },
 
             // Tablets
@@ -1042,7 +1065,7 @@
                 pack: '10 Tablets',
                 mrp: '₹22.40/-',
                 description: 'Paracetamol 650 mg (alu-alu).',
-                image: 'product-images/89.png'
+                image: 'https://i.postimg.cc/bvfx3N5J/file-00000000da0071f6aaa06abcf2a71132.png'
             },
             {
                 id: 9,
@@ -1093,7 +1116,7 @@
                 pack: '10 Tablets',
                 mrp: '₹185/-',
                 description: 'Amoxycillin 500 mg + Clavulanic Acid 125 mg (alu-alu) .',
-                image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400'
+                image: 'https://i.postimg.cc/Nfd3ZLqW/Chat-GPT-Image-Nov-28-2025-02-50-13-PM.png'
             },
             {
                 id: 14,
@@ -1135,7 +1158,7 @@
                 pack: '200 ml Bottle',
                 mrp: '₹135/-',
                 description: 'Lycopene 10%2000 mcg, Niacinamide 25mg, Folic Acid 100gcg, Selenium, Sodium Selenate 35 mcg, Zinc Gluconate 3mg, Potassium iodide 100 mcg, Cupric iodide 500mcg, Vitamin B12 1mcg,Vitamin B6 1.5mg Syrup.',
-                image: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=400'
+                image: 'https://i.postimg.cc/WbLjSBnn/file-00000000aadc71f8b3f145d0502d0290.png'
             },
             {
                 id: 18,
@@ -1145,7 +1168,7 @@
                 pack: '200 ml Bottle',
                 mrp: '₹95/-',
                 description: 'Cyproheptadine 2mg + Tricholine Citrate 275mg Syrup.',
-                image: 'product-images/99.jpeg'
+                image: 'https://i.postimg.cc/sgLjrMzv/Chat-GPT-Image-Nov-28-2025-01-20-28-PM.png'
             },
 
             // Powders
@@ -1157,7 +1180,7 @@
                 pack: '200 gm Container',
                 mrp: '₹340/-',
                 description: 'Fortified with DHA with the advantage of vitamin.',
-                image: 'https://images.unsplash.com/photo-1593095948071-474c5cc2989d?w=400'
+                image: 'https://i.postimg.cc/R0J5mGCV/Chat-GPT-Image-Nov-28-2025-01-51-35-PM.png'
             },
             {
                 id: 20,
@@ -1189,7 +1212,7 @@
                 pack: '10 Capsules',
                 mrp: '₹185/-',
                 description: 'Esomeprazole 40mg + Levosulpride 75mg (SR)',
-                image: 'product-images/capsule 6.jpeg'
+                image: 'https://i.postimg.cc/Hxxmr5g6/Chat-GPT-Image-Nov-28-2025-02-04-26-PM.png'
             },
             {
                 id: 23,
@@ -1199,7 +1222,7 @@
                 pack: '10 Capsules',
                 mrp: '₹185/-',
                 description: 'Pantoprazole 40mg + Domperidone 30mg (SR).',
-                image: 'product-images/capsule 2.jpeg'
+                image: 'https://i.postimg.cc/yNG9Gmv8/Chat-GPT-Image-Nov-28-2025-01-57-58-PM.png'
             }
         ];
 
@@ -1251,7 +1274,9 @@
                 card.className = 'product-card';
                 card.style.animationDelay = `${index * 0.05}s`;
                 card.innerHTML = `
-                    <img src="${product.image}" alt="${product.name}" class="product-image">
+                    <div class="product-image-wrapper">
+                        <img src="${product.image}" alt="${product.name}" class="product-image" onerror="this.onerror=null;this.src='logo.jpeg';">
+                    </div>
                     <div class="product-info">
                         <span class="product-category">${product.category.toUpperCase()}</span>
                         <h3 class="product-name">${product.name}</h3>
@@ -1290,7 +1315,9 @@
 
             modalTitle.textContent = product.name;
             modalBody.innerHTML = `
-                <img src="${product.image}" alt="${product.name}" class="modal-product-image">
+                <div class="modal-image-wrapper">
+                    <img src="${product.image}" alt="${product.name}" class="modal-product-image" onerror="this.onerror=null;this.src='logo.jpeg';">
+                </div>
                 <div class="modal-product-details">
                     <div class="detail-row">
                         <span class="detail-label">Product Name:</span>
