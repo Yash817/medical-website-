@@ -8,8 +8,6 @@
     <meta name="author" content="Yash Prajapati">
     <title>Indoswiss Medicon - High-Quality Medicines, Trusted Globally</title>
 
-
-
 <!-- ========================= ADVANCED SEO FOR INDOSWISS MEDICON ========================= -->
 
 <meta name="description" content="Explore INDOSWISS MEDICON’s complete range of ISO & WHO certified pharmaceutical products: Injections, Tablets, Syrups, Capsules, and Protein Powders. Trusted by hospitals and healthcare professionals." />
@@ -162,106 +160,202 @@
             line-height: 1.6;
         }
 
-        /* Preloader */
+        /* ================= CINEMATIC PRELOADER STYLES ================= */
         .preloader {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #ffffff 0%, #e0f7fa 50%, #b2ebf2 100%);
+            background: #000;
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 10000;
-            animation: preloaderFadeOut 1s ease-in-out 3.5s forwards;
             overflow: hidden;
+            transition: opacity 1s cubic-bezier(0.7, 0, 0.3, 1), transform 1s cubic-bezier(0.7, 0, 0.3, 1);
         }
 
-        .preloader::before {
-            content: '';
+        /* Cinematic Vignette & Grain */
+        .preloader::after {
+            content: "";
             position: absolute;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(11, 114, 133, 0.05) 0%, transparent 70%);
-            animation: preloaderRotate 20s linear infinite;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 40%, black 120%);
+            pointer-events: none;
+            z-index: 1;
         }
 
-        @keyframes preloaderRotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        @keyframes preloaderFadeOut {
-            to {
-                opacity: 0;
-                visibility: hidden;
-            }
-        }
-
-        .preloader-content {
+        .cinematic-content {
             position: relative;
-            width: 400px;
-            height: 400px;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            perspective: 1000px; /* For 3D text effects */
+        }
+
+        /* 1. The Heartbeat Line (Background) */
+        .heartbeat-wrapper {
+            position: absolute;
+            width: 100vw;
+            height: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
+            opacity: 0.3;
+            z-index: -1;
         }
 
-        /* DNA Helix Animation */
-        .dna-helix {
-            position: absolute;
-            width: 200px;
-            height: 300px;
-        }
-
-        .dna-strand {
-            position: absolute;
+        .heartbeat-line-svg {
             width: 100%;
             height: 100%;
+            stroke: #00fff2;
+            stroke-width: 1.5;
+            fill: none;
+            stroke-dasharray: 2000;
+            stroke-dashoffset: 2000;
+            animation: drawLineCinematic 4s ease-in-out infinite;
+            filter: drop-shadow(0 0 8px rgba(0, 255, 242, 0.8));
         }
 
-        .dna-ball {
-            position: absolute;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: var(--primary);
-            box-shadow: 0 0 20px rgba(11, 114, 133, 0.6);
+        @keyframes drawLineCinematic {
+            0% { stroke-dashoffset: 2000; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { stroke-dashoffset: 0; opacity: 0; }
         }
 
-        .dna-ball:nth-child(odd) {
-            background: var(--secondary);
-            box-shadow: 0 0 20px rgba(18, 184, 165, 0.6);
+        /* 2. The Main Logo - 3D Reveal */
+        .cinematic-logo {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.5em; /* Start wide */
+            color: transparent;
+            background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 50%, #b2ebf2 51%, #0b7285 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            position: relative;
+            animation: 
+                logoReveal 2.5s cubic-bezier(0.19, 1, 0.22, 1) forwards,
+                metalShine 5s linear infinite;
+            filter: drop-shadow(0 0 15px rgba(11, 114, 133, 0.3));
+            text-align: center;
+            line-height: 1.1;
+            margin-bottom: 20px;
         }
 
-        .dna-ball:nth-child(1) { animation: dna-rotate 3s ease-in-out infinite; animation-delay: 0s; }
-        .dna-ball:nth-child(2) { animation: dna-rotate 3s ease-in-out infinite; animation-delay: 0.15s; }
-        .dna-ball:nth-child(3) { animation: dna-rotate 3s ease-in-out infinite; animation-delay: 0.3s; }
-        .dna-ball:nth-child(4) { animation: dna-rotate 3s ease-in-out infinite; animation-delay: 0.45s; }
-        .dna-ball:nth-child(5) { animation: dna-rotate 3s ease-in-out infinite; animation-delay: 0.6s; }
-        .dna-ball:nth-child(6) { animation: dna-rotate 3s ease-in-out infinite; animation-delay: 0.75s; }
-        .dna-ball:nth-child(7) { animation: dna-rotate 3s ease-in-out infinite; animation-delay: 0.9s; }
-        .dna-ball:nth-child(8) { animation: dna-rotate 3s ease-in-out infinite; animation-delay: 1.05s; }
-
-        @keyframes dna-rotate {
-            0%, 100% {
-                transform: translateX(-80px) translateY(0) scale(1);
+        @keyframes logoReveal {
+            0% {
+                opacity: 0;
+                transform: scale(1.5) translateZ(-100px);
+                filter: blur(20px);
+                letter-spacing: 1em;
+            }
+            100% {
                 opacity: 1;
-            }
-            25% {
-                transform: translateX(0) translateY(75px) scale(0.8);
-                opacity: 0.7;
-            }
-            50% {
-                transform: translateX(80px) translateY(150px) scale(1);
-                opacity: 1;
-            }
-            75% {
-                transform: translateX(0) translateY(225px) scale(0.8);
-                opacity: 0.7;
+                transform: scale(1) translateZ(0);
+                filter: blur(0);
+                letter-spacing: 0.2em;
             }
         }
+
+        @keyframes metalShine {
+            to { background-position: 200% center; }
+        }
+
+        /* 3. The Tagline - Typewriter style fade */
+        .cinematic-tagline {
+            font-size: clamp(0.8rem, 2vw, 1.2rem);
+            color: #5eead4;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: taglineSlideUp 1.2s ease-out 1.5s forwards;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .cinematic-tagline::before, 
+        .cinematic-tagline::after {
+            content: '';
+            height: 1px;
+            width: 40px;
+            background: linear-gradient(90deg, transparent, #5eead4);
+            opacity: 0.5;
+        }
+        .cinematic-tagline::after {
+            background: linear-gradient(90deg, #5eead4, transparent);
+        }
+
+        @keyframes taglineSlideUp {
+            to {
+                opacity: 0.9;
+                transform: translateY(0);
+            }
+        }
+
+        /* 4. Loading Bar - High Tech */
+        .loader-container {
+            width: 200px;
+            height: 2px;
+            background: rgba(255,255,255,0.1);
+            margin-top: 40px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 2px;
+            opacity: 0;
+            animation: fadeIn 0.5s ease 2s forwards;
+        }
+
+        .loader-progress {
+            width: 0%;
+            height: 100%;
+            background: #00fff2;
+            box-shadow: 0 0 10px #00fff2;
+            animation: loadProgress 3.5s ease-in-out forwards;
+        }
+
+        @keyframes loadProgress {
+            0% { width: 0%; }
+            40% { width: 30%; }
+            70% { width: 70%; }
+            100% { width: 100%; }
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Exit Animation */
+        .preloader.fade-out {
+            opacity: 0;
+            transform: scale(1.1); /* Slight zoom in on exit for immersion */
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .cinematic-logo {
+                font-size: 2.2rem;
+                letter-spacing: 0.1em;
+            }
+            .cinematic-tagline {
+                font-size: 0.7rem;
+                letter-spacing: 0.2em;
+            }
+        }
+        /* ================= END CINEMATIC PRELOADER STYLES ================= */
+
 
         /* Logo Animation */
         .logo-container {
@@ -381,49 +475,6 @@
         @keyframes pulse {
             0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
             50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
-        }
-
-        /* Loading Bar */
-        .loading-bar {
-            position: absolute;
-            bottom: 50px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 350px;
-            height: 5px;
-            background: rgba(11, 114, 133, 0.2);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .loading-progress {
-            height: 100%;
-            background: var(--gradient);
-            width: 0;
-            animation: loadingProgress 3s ease-in-out forwards;
-            box-shadow: 0 0 15px rgba(18, 184, 165, 0.8);
-            position: relative;
-        }
-
-        .loading-progress::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-            animation: loadingShine 1s infinite;
-        }
-
-        @keyframes loadingProgress {
-            to { width: 100%; }
-        }
-
-        @keyframes loadingShine {
-            from { transform: translateX(-100%); }
-            to { transform: translateX(100%); }
         }
 
         /* Top Info Bar */
@@ -1226,41 +1277,18 @@
     </style>
 </head>
 <body>
-    <!-- Preloader -->
+    <!-- Cinematic Preloader -->
     <div class="preloader" id="preloader">
-        <div class="preloader-content">
-            <!-- DNA Helix -->
-            <div class="dna-helix">
-                <div class="dna-strand">
-                    <div class="dna-ball"></div>
-                    <div class="dna-ball"></div>
-                    <div class="dna-ball"></div>
-                    <div class="dna-ball"></div>
-                    <div class="dna-ball"></div>
-                    <div class="dna-ball"></div>
-                    <div class="dna-ball"></div>
-                    <div class="dna-ball"></div>
-                </div>
-            </div>
-
-            <!-- Molecule -->
-            <div class="molecule">
-                <div class="atom" style="top: 50%; left: 50%; transform: translate(-50%, -50%);"></div>
-                <div class="atom" style="top: 0; left: 50%; transform: translate(-50%, -50%);"></div>
-                <div class="atom" style="bottom: 0; left: 50%; transform: translate(-50%, 50%);"></div>
-                <div class="atom" style="top: 50%; left: 0; transform: translate(-50%, -50%);"></div>
-                <div class="atom" style="top: 50%; right: 0; transform: translate(50%, -50%);"></div>
-            </div>
-
-            <!-- Logo -->
-            <div class="logo-container">
-                <div class="logo-text logo-glow">INDOSWISS</div>
-                <div class="logo-subtext logo-glow">MEDICON</div>
-            </div>
-
-            <!-- Loading Bar -->
-            <div class="loading-bar">
-                <div class="loading-progress"></div>
+        <div class="heartbeat-wrapper">
+            <svg class="heartbeat-line-svg" viewBox="0 0 300 100" preserveAspectRatio="none">
+                 <path d="M0,50 L20,50 L30,50 L40,20 L50,80 L60,50 L70,50 L80,50 L90,30 L100,70 L110,50 L120,50 L300,50" />
+            </svg>
+        </div>
+        <div class="cinematic-content">
+            <div class="cinematic-logo">INDOSWISS MEDICON</div>
+            <div class="cinematic-tagline">Life Better When You Are Healthy</div>
+            <div class="loader-container">
+                <div class="loader-progress"></div>
             </div>
         </div>
     </div>
@@ -1446,11 +1474,16 @@
     </div>
 
     <script>
-        // Preloader
+        // Cinematic Preloader Logic
         window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            // Allow animation to play for a bit (4.5s) then fade out
             setTimeout(function() {
-                document.getElementById('preloader').style.display = 'none';
-            }, 4000);
+                preloader.classList.add('fade-out');
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 1000); // Wait for transition to finish
+            }, 4500);
         });
 
         // Header Scroll Effect
@@ -1529,36 +1562,6 @@
         document.querySelectorAll('.stat-card').forEach(card => {
             observer.observe(card);
         });
-
-        // Create Floating Particles for Preloader
-        function createParticles() {
-            const preloaderContent = document.querySelector('.preloader-content');
-            const particleCount = 30;
-
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                
-                const angle = (i / particleCount) * Math.PI * 2;
-                const distance = 100 + Math.random() * 50;
-                const tx = Math.cos(angle) * distance;
-                const ty = Math.sin(angle) * distance;
-                
-                particle.style.setProperty('--tx', tx + 'px');
-                particle.style.setProperty('--ty', ty + 'px');
-                particle.style.left = '50%';
-                particle.style.top = '50%';
-                particle.style.animationDelay = (i * 0.1) + 's';
-                
-                if (i % 2 === 0) {
-                    particle.style.background = '#12b8a5';
-                }
-                
-                preloaderContent.appendChild(particle);
-            }
-        }
-
-        createParticles();
 
         // Create Floating Particles in Hero Section
         function createHeroParticles() {
